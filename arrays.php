@@ -2,13 +2,14 @@
 
     // arrays
     $fruits = ["apple", "banana", "orange"];
-    echo "<h1>ARRAYS</h1> <br>";
-    echo "<strong>Accessing elements by their respective indexes</strong> <br>";
-    echo $fruits[0] . "<br>";
-    echo $fruits[1] . "<br>";
-    echo $fruits[2] . "<br>";
-
-    echo "<br>";
+    
+    echo "<pre><h1>ARRAYS</h1
+     <strong>Accessing elements by their respective indexes</strong>
+      fruits = [apple, banana, orange] 
+      fruits[0] =  {$fruits[0]} 
+      fruits[1] =  {$fruits[1]} 
+      fruits[2] =  {$fruits[2]} 
+     </pre> <br>";
     
     // array functions
 
@@ -69,3 +70,6 @@
     }
     echo "</pre>";
 ?>
+
+
+
