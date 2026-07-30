@@ -5,7 +5,7 @@
     $db_password = "";
     $db_name = "brocode";
     $connection = "";
-
+    // primer jednostavne konekcije koja se u produkciji ne koristi
     try {
     $connection = mysqli_connect($db_server, $db_username, $db_password, $db_name);
 
