@@ -1,7 +1,8 @@
 <?php
-    $x = $_GET['x'];
-    $y = $_GET['y'];
-    $z = $_GET['z'];
+    // definisanje promenljivih za citanje vrednosti polja sa forme (x,y,z)
+    $x = trim($_GET['x'] ?? "");
+    $y = trim($_GET['y'] ?? "");
+    $z = trim($_GET['z'] ?? "");
 
 ?>
 
@@ -63,6 +64,7 @@
         <button type="submit" id="submit">Submit x,y,z</button>
     </form>
     </div>
+    <!-- Ispit vrednosti unetih kroz formu (mozemo i rucno menjati u linku vrednosti) -->
     <div id="output">
         <p>Submited values:</p>
                 <p class="outputValues"> <?php echo "x = $x"; ?> </p>

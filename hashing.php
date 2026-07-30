@@ -1,14 +1,19 @@
 <?php
 
+    // standarno koriscenje POST metode za unos vrednosti u polja username i password kroz formu UIa
     if($_SERVER["REQUEST_METHOD"] === "POST") {
         if(isset($_POST["submit"])) {
             $username = $_POST["username"] ?? "";
             $password = $_POST["password"] ?? "";
+            $hashed_password = "";
+            // Ako je uneto password pozovi password_hash() funkciju
             if(isset($password)) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            echo $hashed_password . "<br>";
             }
-            echo $password;
+            // Ispis rezultata na ekran
+            echo "Username: {$username} <br>";
+            echo "Password: {$password} <br>" ;
+            echo "Hashed_password: {$hashed_password} <br><hr><br>" ;
         }
     }
 

@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+    <!-- Forme za izbor piramide za crtanje za uneti broj n -->
     <p class="title">Nacrtaj obrnutu piramidu</p>
     <form action="functions.php" method="post">
         <label for="n1">Enter number:</label>
@@ -55,6 +56,7 @@
 
 <?php
     
+    // funkcije za iscrtavanje odgovarajucih piramida za uneto n
     function obrnuta_piramida(int $n) {
         for($i = $n; $i >0; $i--) {
             echo str_repeat("*", $i) . "<br>";
@@ -129,6 +131,7 @@
 
     }
 
+    // preko POST metode obradjujemo uneto n (imamo submit za svaku formu)
     if($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $n1 = $_POST["n1"] ?? "";
