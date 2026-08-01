@@ -1,16 +1,18 @@
 <?php
-
+    // Pokrecemo sesiju
    session_start();
-
+    // Obradjujemo Submit dugme
     if($_SERVER["REQUEST_METHOD"] === "POST") {
         if(isset($_POST["submit"])) {
             $username = $_POST["username"] ?? "";
             $password = $_POST["password"] ?? "";
+            // Ako su uneseni username, password redirektuj se na stranicu logout.php
             if($username !="" && $password !="") {
                 $_SESSION["username"] = $username;
                 $_SESSION["password"] = $password;
                 header("location: logout.php");
             }
+            // Ako nisu uneti username i password prikazi poruku korisniku
             else {
                 echo "Please enter username and password!";
             }

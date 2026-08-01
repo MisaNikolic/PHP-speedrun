@@ -2,8 +2,9 @@
     require_once "config.php";
     // include("config.php");
 
-    $username = "ivana23";
-    $password = "pomome!";
+    // Stara verzija - sa rucnim unosom podataka za INSERT
+    $username = "Misa";
+    $password = "Misa1702!";
 
     $sql = "INSERT INTO users (username, password)
             VALUES ('$username', '$password')";

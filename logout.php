@@ -1,9 +1,10 @@
 <?php
+// Pokrecemo sesiju
     session_start();
-
+// Prikazujemo parametre sesije: username,password
     echo $_SESSION["username"] . "<br>";
     echo $_SESSION["password"] . "<br>";
-    
+// U slucaju da korisnik klikne na logout unisti sesiju i redirektuj ga na log in stranicu
     if($_SERVER["REQUEST_METHOD"] === "POST") {
     if(isset($_POST["logout"])) {
         session_destroy();
