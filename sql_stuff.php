@@ -3,9 +3,19 @@
     // include("config.php");
 
     // Stara verzija - sa rucnim unosom podataka za INSERT
-    $username = "Misa";
-    $password = "Misa1702!";
+    //      $username = "Misa";
+    //     $password = "Moja_sifra";
+    // Nova verzija(korigovana) - dodata je forma sa submitom username, password
+    // Napomena, ovo nije bezbedan nacin konecije sa bazom, samo je za svrhu ucenja
+    // In real-app situation se koristi prepare 
+    // Takodje password nije hashovan
+   
 
+    if($_SERVER["REQUEST_METHOD"] === "POST") {
+        
+    if(isset($_POST["submit"])) {
+         $username = $_POST['username'] ?? "";
+        $password = $_POST['password'] ?? "";
     $sql = "INSERT INTO users (username, password)
             VALUES ('$username', '$password')";
 
@@ -15,7 +25,7 @@
              $sql2 = "SELECT * FROM users";
             $result = mysqli_query($connection, $sql2);
 
-            while($row =  $row = mysqli_fetch_assoc($result)) {
+            while( $row = mysqli_fetch_assoc($result)) {
             echo $row["id"] . "<br>";
             echo $row["username"] . "<br>";
             echo $row["reg_date"] . "<br>";
@@ -27,6 +37,8 @@
          }
 
          mysqli_close(($connection));
+    }
+         }
 
 ?>
 
@@ -45,6 +57,12 @@
     </style>
 </head>
 <body>
-    
+    <form action="sql_stuff.php" method="post">
+        <label for="username">Username:</label> 
+        <input type="text" id="username" name="username" placeholder="Enter your username"> <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <input type="submit" name="submit">
+    </form>
 </body>
 </html>
